@@ -1,0 +1,14 @@
+{
+    "section": {
+        "prefix": "section",
+        "body": "section ${1:NAME} {\n\t$0",
+        "description": "section...",
+        "scope": "source.iapp"
+    },
+    "table": {
+        "prefix": "table",
+        "body": "table ${1:NAME} {\n\t$0",
+        "description": "table...",
+        "scope": "source.iapp"
+    }
+}

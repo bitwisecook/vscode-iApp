@@ -1,0 +1,160 @@
+fileTypes:
+    - APL
+foldingStartMarker: '\{\s*$'
+foldingStopMarker: '^\s*\}'
+keyEquivalent: ^~i
+name: 'iApp APL'
+patterns:
+    -
+        begin: '(?<=^|;)\s*((#))'
+        beginCaptures:
+            '1':
+                name: comment.line.number-sign.apl
+            '2':
+                name: punctuation.definition.comment.apl
+        contentName: comment.line.number-sign.apl
+        end: \n
+        patterns:
+            -
+                match: (\\\\|\\\n)
+    -
+        captures:
+            '1':
+                name: keyword.control.apl
+        match: '(?<=^|[\[{;])\s*(#include|#inline|section|text|table)\b'
+    -
+        captures:
+            '1':
+                name: keyword.other.apl
+        match: \b(message|string|choice|editchoice|yesno|noyes|enadis|enadisdry|disena|indefint|falsetrue|truefalse|tcpprof)\b
+    -
+        captures:
+            '1':
+                name: keyword.other.apl
+            '2':
+                name: entity.name.function.apl
+        match: '^\s*(define)\s+([^\s]+)'
+    -
+        include: '#escape'
+    -
+        include: '#variable'
+    -
+        include: '#operator'
+    -
+        include: '#numeric'
+    -
+        begin: '"'
+        beginCaptures:
+            '0':
+                name: punctuation.definition.string.begin.apl
+        end: '"'
+        endCaptures:
+            '0':
+                name: punctuation.definition.string.end.apl
+        name: string.quoted.double.apl
+        patterns:
+            -
+                include: '#escape'
+            -
+                include: '#variable'
+            -
+                include: '#embedded'
+repository:
+    bare-string:
+        begin: '(?:^|(?<=\s))"'
+        comment: 'matches a single quote-enclosed word without scoping'
+        end: '"([^\s\]]*)'
+        endCaptures:
+            '1':
+                name: invalid.illegal.apl
+        patterns:
+            -
+                include: '#escape'
+            -
+                include: '#variable'
+    braces:
+        begin: '(?:^|(?<=\s))\{'
+        comment: 'matches a single brace-enclosed word'
+        end: '\}([^\s\]]*)'
+        endCaptures:
+            '1':
+                name: invalid.illegal.apl
+        patterns:
+            -
+                match: '\\[{}\n]'
+                name: constant.character.escape.apl
+            -
+                include: '#inner-braces'
+    embedded:
+        begin: '\['
+        beginCaptures:
+            '0':
+                name: punctuation.section.embedded.begin.apl
+        end: '\]'
+        endCaptures:
+            '0':
+                name: punctuation.section.embedded.end.apl
+        name: source.apl.embedded
+        patterns:
+            -
+                include: source.apl
+    escape:
+        match: '\\(\d{1,3}|x[a-fA-F0-9]+|u[a-fA-F0-9]{1,4}|.|\n)'
+        name: constant.character.escape.apl
+    inner-braces:
+        begin: '\{'
+        comment: 'matches a nested brace in a brace-enclosed word'
+        end: '\}'
+        patterns:
+            -
+                match: '\\[{}\n]'
+                name: constant.character.escape.apl
+            -
+                include: '#inner-braces'
+    regexp:
+        begin: '(?=\S)(?![\n;\]])'
+        comment: 'matches a single word, named as a regexp, then swallows the rest of the command'
+        end: '(?=[\n;\]])'
+        patterns:
+            -
+                begin: '(?=[^ \t\n;])'
+                end: '(?=[ \t\n;])'
+                name: string.regexp.apl
+                patterns:
+                    - {include: '#braces'}
+                    - {include: '#bare-string'}
+                    - {include: '#escape'}
+                    - {include: '#variable'}
+            -
+                begin: '[ \t]'
+                comment: 'swallow the rest of the command'
+                end: '(?=[\n;\]])'
+                patterns:
+                    - {include: '#variable'}
+                    - {include: '#embedded'}
+                    - {include: '#escape'}
+                    - {include: '#braces'}
+                    - {include: '#string'}
+    string:
+        applyEndPatternLast: 1
+        begin: '(?:^|(?<=\s))(?=")'
+        comment: 'matches a single quote-enclosed word with scoping'
+        end: ""
+        name: string.quoted.double.apl
+        patterns:
+            -
+                include: '#bare-string'
+    variable:
+        captures:
+            '1':
+                name: punctuation.definition.variable.apl
+        match: '(\$)((?:[a-zA-Z0-9_]|::)+(\([^\)]+\))?|\{[^\}]*\})'
+        name: variable.other.apl
+    numeric:
+        match: '(?<![a-zA-Z])([0-7][0-7][0-7]|0x[0-9a-fA-F]|[+-]?([0-9]*[.])?[0-9]+f?)(?![\.a-zA-Z])'
+        name: constant.numeric.apl
+    operator:
+        match: '(?<= |\d)(-|\+|~|&{1,2}|\|{1,2}|<{1,2}|>{1,2}|\*{1,2}|!|%|\/|<=|>=|={1,2}|!=|\^)(?= |\d)'
+        name: keyword.operator.apl
+scopeName: source.apl
+uuid: fdb5515a-28d8-4010-8075-eb2b8a27c8c1

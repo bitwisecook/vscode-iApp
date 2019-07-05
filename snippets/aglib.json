@@ -1,0 +1,1094 @@
+{
+    "ag_conf": {
+        "prefix": "ag_conf",
+        "body": "ag_conf ${1|create,modify,delete,publish|} /${0|ltm,sys,net,gtm,apm,asm,pem,auth,cm|}",
+        "description": "ag_conf...",
+        "scope": "source.iapp"
+    },
+    "ag_log_kvp": {
+        "prefix": "ag_log_kvps",
+        "body": "ag_log_kvps $::log_h ${1|error,warn,info,debug|} ${2:TYPE} ${0}",
+        "description": "ag_log_kvps...",
+        "scope": "source.iapp"
+    },
+    "_is_fqdn": {
+        "prefix": "_is_fqdn",
+        "body": "_is_fqdn",
+        "description": "_is_fqdn...",
+        "scope": "source.iapp"
+    },
+    "_is_ipv4": {
+        "prefix": "_is_ipv4",
+        "body": "_is_ipv4",
+        "description": "_is_ipv4...",
+        "scope": "source.iapp"
+    },
+    "_is_ipv6": {
+        "prefix": "_is_ipv6",
+        "body": "_is_ipv6",
+        "description": "_is_ipv6...",
+        "scope": "source.iapp"
+    },
+    "ag_log_msg": {
+        "prefix": "ag_log_msg",
+        "body": "ag_log_msg",
+        "description": "ag_log_msg...",
+        "scope": "source.iapp"
+    },
+    "ag_log_open": {
+        "prefix": "ag_log_open",
+        "body": "ag_log_open",
+        "description": "ag_log_open...",
+        "scope": "source.iapp"
+    },
+    "ag_log_open_syslog": {
+        "prefix": "ag_log_open_syslog",
+        "body": "ag_log_open_syslog",
+        "description": "ag_log_open_syslog...",
+        "scope": "source.iapp"
+    },
+    "ag_log_summary": {
+        "prefix": "ag_log_summary",
+        "body": "ag_log_summary",
+        "description": "ag_log_summary...",
+        "scope": "source.iapp"
+    },
+    "ag_summary": {
+        "prefix": "ag_summary",
+        "body": "ag_summary",
+        "description": "ag_summary...",
+        "scope": "source.iapp"
+    },
+    "ag_syslog_cleanup": {
+        "prefix": "ag_syslog_cleanup",
+        "body": "ag_syslog_cleanup",
+        "description": "ag_syslog_cleanup...",
+        "scope": "source.iapp"
+    },
+    "ag_syslog_format_hybrid_msg": {
+        "prefix": "ag_syslog_format_hybrid_msg",
+        "body": "ag_syslog_format_hybrid_msg",
+        "description": "ag_syslog_format_hybrid_msg...",
+        "scope": "source.iapp"
+    },
+    "ag_syslog_format_syslog_msg": {
+        "prefix": "ag_syslog_format_syslog_msg",
+        "body": "ag_syslog_format_syslog_msg",
+        "description": "ag_syslog_format_syslog_msg...",
+        "scope": "source.iapp"
+    },
+    "ag_syslog_send_log_msg": {
+        "prefix": "ag_syslog_send_log_msg",
+        "body": "ag_syslog_send_log_msg",
+        "description": "ag_syslog_send_log_msg...",
+        "scope": "source.iapp"
+    },
+    "ag_syslog_setup": {
+        "prefix": "ag_syslog_setup",
+        "body": "ag_syslog_setup",
+        "description": "ag_syslog_setup...",
+        "scope": "source.iapp"
+    },
+    "agssl_build_keycert": {
+        "prefix": "agssl_build_keycert",
+        "body": "agssl_build_keycert",
+        "description": "agssl_build_keycert...",
+        "scope": "source.iapp"
+    },
+    "agssl_certurl_processor": {
+        "prefix": "agssl_certurl_processor",
+        "body": "agssl_certurl_processor",
+        "description": "agssl_certurl_processor...",
+        "scope": "source.iapp"
+    },
+    "agssl_clean_ciphers": {
+        "prefix": "agssl_clean_ciphers",
+        "body": "agssl_clean_ciphers",
+        "description": "agssl_clean_ciphers...",
+        "scope": "source.iapp"
+    },
+    "agssl_get_entry_from_profileref": {
+        "prefix": "agssl_get_entry_from_profileref",
+        "body": "agssl_get_entry_from_profileref",
+        "description": "agssl_get_entry_from_profileref...",
+        "scope": "source.iapp"
+    },
+    "agssl_get_entry_from_sslcache": {
+        "prefix": "agssl_get_entry_from_sslcache",
+        "body": "agssl_get_entry_from_sslcache",
+        "description": "agssl_get_entry_from_sslcache...",
+        "scope": "source.iapp"
+    },
+    "agssl_get_ssl_tmpfile": {
+        "prefix": "agssl_get_ssl_tmpfile",
+        "body": "agssl_get_ssl_tmpfile",
+        "description": "agssl_get_ssl_tmpfile...",
+        "scope": "source.iapp"
+    },
+    "agssl_get_ssl_tmppath": {
+        "prefix": "agssl_get_ssl_tmppath",
+        "body": "agssl_get_ssl_tmppath",
+        "description": "agssl_get_ssl_tmppath...",
+        "scope": "source.iapp"
+    },
+    "agssl_setup": {
+        "prefix": "agssl_setup",
+        "body": "agssl_setup",
+        "description": "agssl_setup...",
+        "scope": "source.iapp"
+    },
+    "calibration_test": {
+        "prefix": "calibration_test",
+        "body": "calibration_test",
+        "description": "calibration_test...",
+        "scope": "source.iapp"
+    },
+    "cleanup_tempfiles": {
+        "prefix": "cleanup_tempfiles",
+        "body": "cleanup_tempfiles",
+        "description": "cleanup_tempfiles...",
+        "scope": "source.iapp"
+    },
+    "config_open": {
+        "prefix": "config_open",
+        "body": "config_open",
+        "description": "config_open...",
+        "scope": "source.iapp"
+    },
+    "create": {
+        "prefix": "create",
+        "body": "create",
+        "description": "create...",
+        "scope": "source.iapp"
+    },
+    "create_dns_cache_profile": {
+        "prefix": "create_dns_cache_profile",
+        "body": "create_dns_cache_profile",
+        "description": "create_dns_cache_profile...",
+        "scope": "source.iapp"
+    },
+    "create_dns_profile_tcp": {
+        "prefix": "create_dns_profile_tcp",
+        "body": "create_dns_profile_tcp",
+        "description": "create_dns_profile_tcp...",
+        "scope": "source.iapp"
+    },
+    "create_dns_profile_udp": {
+        "prefix": "create_dns_profile_udp",
+        "body": "create_dns_profile_udp",
+        "description": "create_dns_profile_udp...",
+        "scope": "source.iapp"
+    },
+    "create_dns_rule_cache": {
+        "prefix": "create_dns_rule_cache",
+        "body": "create_dns_rule_cache",
+        "description": "create_dns_rule_cache...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_monitor": {
+        "prefix": "create_ltm_monitor",
+        "body": "create_ltm_monitor",
+        "description": "create_ltm_monitor...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_monitor_dns": {
+        "prefix": "create_ltm_monitor_dns",
+        "body": "create_ltm_monitor_dns",
+        "description": "create_ltm_monitor_dns...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_monitor_icmp": {
+        "prefix": "create_ltm_monitor_icmp",
+        "body": "create_ltm_monitor_icmp",
+        "description": "create_ltm_monitor_icmp...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_monitor_meta": {
+        "prefix": "create_ltm_monitor_meta",
+        "body": "create_ltm_monitor_meta",
+        "description": "create_ltm_monitor_meta...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_monitor_udp": {
+        "prefix": "create_ltm_monitor_udp",
+        "body": "create_ltm_monitor_udp",
+        "description": "create_ltm_monitor_udp...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_persist_cookie": {
+        "prefix": "create_ltm_persist_cookie",
+        "body": "create_ltm_persist_cookie",
+        "description": "create_ltm_persist_cookie...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_persist_source_addr": {
+        "prefix": "create_ltm_persist_source_addr",
+        "body": "create_ltm_persist_source_addr",
+        "description": "create_ltm_persist_source_addr...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_policy_from_matrix": {
+        "prefix": "create_ltm_policy_from_matrix",
+        "body": "create_ltm_policy_from_matrix",
+        "description": "create_ltm_policy_from_matrix...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_policy_from_matrix_11_6": {
+        "prefix": "create_ltm_policy_from_matrix_11_6",
+        "body": "create_ltm_policy_from_matrix_11_6",
+        "description": "create_ltm_policy_from_matrix_11_6...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_policy_from_matrix_13_1": {
+        "prefix": "create_ltm_policy_from_matrix_13_1",
+        "body": "create_ltm_policy_from_matrix_13_1",
+        "description": "create_ltm_policy_from_matrix_13_1...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_pool": {
+        "prefix": "create_ltm_pool",
+        "body": "create_ltm_pool",
+        "description": "create_ltm_pool...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_pool_fqdn": {
+        "prefix": "create_ltm_pool_fqdn",
+        "body": "create_ltm_pool_fqdn",
+        "description": "create_ltm_pool_fqdn...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_http": {
+        "prefix": "create_ltm_profile_http",
+        "body": "create_ltm_profile_http",
+        "description": "create_ltm_profile_http...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_oneconnect": {
+        "prefix": "create_ltm_profile_oneconnect",
+        "body": "create_ltm_profile_oneconnect",
+        "description": "create_ltm_profile_oneconnect...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_request_log": {
+        "prefix": "create_ltm_profile_request_log",
+        "body": "create_ltm_profile_request_log",
+        "description": "create_ltm_profile_request_log...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp": {
+        "prefix": "create_ltm_profile_tcp",
+        "body": "create_ltm_profile_tcp",
+        "description": "create_ltm_profile_tcp...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_11_6": {
+        "prefix": "create_ltm_profile_tcp_11_6",
+        "body": "create_ltm_profile_tcp_11_6",
+        "description": "create_ltm_profile_tcp_11_6...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_13_1": {
+        "prefix": "create_ltm_profile_tcp_13_1",
+        "body": "create_ltm_profile_tcp_13_1",
+        "description": "create_ltm_profile_tcp_13_1...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_client": {
+        "prefix": "create_ltm_profile_tcp_client",
+        "body": "create_ltm_profile_tcp_client",
+        "description": "create_ltm_profile_tcp_client...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_client_11_6": {
+        "prefix": "create_ltm_profile_tcp_client_11_6",
+        "body": "create_ltm_profile_tcp_client_11_6",
+        "description": "create_ltm_profile_tcp_client_11_6...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_client_13_1": {
+        "prefix": "create_ltm_profile_tcp_client_13_1",
+        "body": "create_ltm_profile_tcp_client_13_1",
+        "description": "create_ltm_profile_tcp_client_13_1...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_client_legacy": {
+        "prefix": "create_ltm_profile_tcp_client_legacy",
+        "body": "create_ltm_profile_tcp_client_legacy",
+        "description": "create_ltm_profile_tcp_client_legacy...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_client_mobile": {
+        "prefix": "create_ltm_profile_tcp_client_mobile",
+        "body": "create_ltm_profile_tcp_client_mobile",
+        "description": "create_ltm_profile_tcp_client_mobile...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_client_modern": {
+        "prefix": "create_ltm_profile_tcp_client_modern",
+        "body": "create_ltm_profile_tcp_client_modern",
+        "description": "create_ltm_profile_tcp_client_modern...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_legacy": {
+        "prefix": "create_ltm_profile_tcp_legacy",
+        "body": "create_ltm_profile_tcp_legacy",
+        "description": "create_ltm_profile_tcp_legacy...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_mobile": {
+        "prefix": "create_ltm_profile_tcp_mobile",
+        "body": "create_ltm_profile_tcp_mobile",
+        "description": "create_ltm_profile_tcp_mobile...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_modern": {
+        "prefix": "create_ltm_profile_tcp_modern",
+        "body": "create_ltm_profile_tcp_modern",
+        "description": "create_ltm_profile_tcp_modern...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_server": {
+        "prefix": "create_ltm_profile_tcp_server",
+        "body": "create_ltm_profile_tcp_server",
+        "description": "create_ltm_profile_tcp_server...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_server_11_6": {
+        "prefix": "create_ltm_profile_tcp_server_11_6",
+        "body": "create_ltm_profile_tcp_server_11_6",
+        "description": "create_ltm_profile_tcp_server_11_6...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_server_13_1": {
+        "prefix": "create_ltm_profile_tcp_server_13_1",
+        "body": "create_ltm_profile_tcp_server_13_1",
+        "description": "create_ltm_profile_tcp_server_13_1...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_server_legacy": {
+        "prefix": "create_ltm_profile_tcp_server_legacy",
+        "body": "create_ltm_profile_tcp_server_legacy",
+        "description": "create_ltm_profile_tcp_server_legacy...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_server_mobile": {
+        "prefix": "create_ltm_profile_tcp_server_mobile",
+        "body": "create_ltm_profile_tcp_server_mobile",
+        "description": "create_ltm_profile_tcp_server_mobile...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_tcp_server_modern": {
+        "prefix": "create_ltm_profile_tcp_server_modern",
+        "body": "create_ltm_profile_tcp_server_modern",
+        "description": "create_ltm_profile_tcp_server_modern...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_udp": {
+        "prefix": "create_ltm_profile_udp",
+        "body": "create_ltm_profile_udp",
+        "description": "create_ltm_profile_udp...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_profile_web_acceleration": {
+        "prefix": "create_ltm_profile_web_acceleration",
+        "body": "create_ltm_profile_web_acceleration",
+        "description": "create_ltm_profile_web_acceleration...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_rule_cache": {
+        "prefix": "create_ltm_rule_cache",
+        "body": "create_ltm_rule_cache",
+        "description": "create_ltm_rule_cache...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_rule_redirect": {
+        "prefix": "create_ltm_rule_redirect",
+        "body": "create_ltm_rule_redirect",
+        "description": "create_ltm_rule_redirect...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_rule_sni_pass_thru": {
+        "prefix": "create_ltm_rule_sni_pass_thru",
+        "body": "create_ltm_rule_sni_pass_thru",
+        "description": "create_ltm_rule_sni_pass_thru...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_rule_sni_passthru": {
+        "prefix": "create_ltm_rule_sni_passthru",
+        "body": "create_ltm_rule_sni_passthru",
+        "description": "create_ltm_rule_sni_passthru...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_rule_wafx": {
+        "prefix": "create_ltm_rule_wafx",
+        "body": "create_ltm_rule_wafx",
+        "description": "create_ltm_rule_wafx...",
+        "scope": "source.iapp"
+    },
+    "create_ltm_virtual_address": {
+        "prefix": "create_ltm_virtual_address",
+        "body": "create_ltm_virtual_address",
+        "description": "create_ltm_virtual_address...",
+        "scope": "source.iapp"
+    },
+    "create_security_ipi_feedlist": {
+        "prefix": "create_security_ipi_feedlist",
+        "body": "create_security_ipi_feedlist",
+        "description": "create_security_ipi_feedlist...",
+        "scope": "source.iapp"
+    },
+    "create_security_ipi_policy": {
+        "prefix": "create_security_ipi_policy",
+        "body": "create_security_ipi_policy",
+        "description": "create_security_ipi_policy...",
+        "scope": "source.iapp"
+    },
+    "create_security_ipi_policy_11_6": {
+        "prefix": "create_security_ipi_policy_11_6",
+        "body": "create_security_ipi_policy_11_6",
+        "description": "create_security_ipi_policy_11_6...",
+        "scope": "source.iapp"
+    },
+    "create_security_ipi_policy_13_1": {
+        "prefix": "create_security_ipi_policy_13_1",
+        "body": "create_security_ipi_policy_13_1",
+        "description": "create_security_ipi_policy_13_1...",
+        "scope": "source.iapp"
+    },
+    "crypto_password": {
+        "prefix": "crypto_password",
+        "body": "crypto_password",
+        "description": "crypto_password...",
+        "scope": "source.iapp"
+    },
+    "crypto_password_config": {
+        "prefix": "crypto_password_config",
+        "body": "crypto_password_config",
+        "description": "crypto_password_config...",
+        "scope": "source.iapp"
+    },
+    "crypto_password_datagroup": {
+        "prefix": "crypto_password_datagroup",
+        "body": "crypto_password_datagroup",
+        "description": "crypto_password_datagroup...",
+        "scope": "source.iapp"
+    },
+    "dump_locals": {
+        "prefix": "dump_locals",
+        "body": "dump_locals",
+        "description": "dump_locals...",
+        "scope": "source.iapp"
+    },
+    "end_processing": {
+        "prefix": "end_processing",
+        "body": "end_processing",
+        "description": "end_processing...",
+        "scope": "source.iapp"
+    },
+    "exec_curl_url_to_path": {
+        "prefix": "exec_curl_url_to_path",
+        "body": "exec_curl_url_to_path",
+        "description": "exec_curl_url_to_path...",
+        "scope": "source.iapp"
+    },
+    "exec_curl_url_to_str": {
+        "prefix": "exec_curl_url_to_str",
+        "body": "exec_curl_url_to_str",
+        "description": "exec_curl_url_to_str...",
+        "scope": "source.iapp"
+    },
+    "expand": {
+        "prefix": "expand",
+        "body": "expand",
+        "description": "expand...",
+        "scope": "source.iapp"
+    },
+    "field_default": {
+        "prefix": "field_default",
+        "body": "field_default",
+        "description": "field_default...",
+        "scope": "source.iapp"
+    },
+    "get_hostname": {
+        "prefix": "get_hostname",
+        "body": "get_hostname",
+        "description": "get_hostname...",
+        "scope": "source.iapp"
+    },
+    "get_obj_name_idx": {
+        "prefix": "get_obj_name_idx",
+        "body": "get_obj_name_idx",
+        "description": "get_obj_name_idx...",
+        "scope": "source.iapp"
+    },
+    "get_obj_name_idx_11_6": {
+        "prefix": "get_obj_name_idx_11_6",
+        "body": "get_obj_name_idx_11_6",
+        "description": "get_obj_name_idx_11_6...",
+        "scope": "source.iapp"
+    },
+    "get_obj_name_idx_13_1": {
+        "prefix": "get_obj_name_idx_13_1",
+        "body": "get_obj_name_idx_13_1",
+        "description": "get_obj_name_idx_13_1...",
+        "scope": "source.iapp"
+    },
+    "get_tmos_version": {
+        "prefix": "get_tmos_version",
+        "body": "get_tmos_version",
+        "description": "get_tmos_version...",
+        "scope": "source.iapp"
+    },
+    "get_tmpfile": {
+        "prefix": "get_tmpfile",
+        "body": "get_tmpfile",
+        "description": "get_tmpfile...",
+        "scope": "source.iapp"
+    },
+    "get_tmppath": {
+        "prefix": "get_tmppath",
+        "body": "get_tmppath",
+        "description": "get_tmppath...",
+        "scope": "source.iapp"
+    },
+    "geturl_auth": {
+        "prefix": "geturl_auth",
+        "body": "geturl_auth",
+        "description": "geturl_auth...",
+        "scope": "source.iapp"
+    },
+    "if_regional_pops": {
+        "prefix": "if_regional_pops",
+        "body": "if_regional_pops",
+        "description": "if_regional_pops...",
+        "scope": "source.iapp"
+    },
+    "if_regional_pops_ret": {
+        "prefix": "if_regional_pops_ret",
+        "body": "if_regional_pops_ret",
+        "description": "if_regional_pops_ret...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_choice": {
+        "prefix": "inp_valid_choice",
+        "body": "inp_valid_choice",
+        "description": "inp_valid_choice...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_disena": {
+        "prefix": "inp_valid_disena",
+        "body": "inp_valid_disena",
+        "description": "inp_valid_disena...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_editchoice": {
+        "prefix": "inp_valid_editchoice",
+        "body": "inp_valid_editchoice",
+        "description": "inp_valid_editchoice...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_enadis": {
+        "prefix": "inp_valid_enadis",
+        "body": "inp_valid_enadis",
+        "description": "inp_valid_enadis...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_enadisdry": {
+        "prefix": "inp_valid_enadisdry",
+        "body": "inp_valid_enadisdry",
+        "description": "inp_valid_enadisdry...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_falsetrue": {
+        "prefix": "inp_valid_falsetrue",
+        "body": "inp_valid_falsetrue",
+        "description": "inp_valid_falsetrue...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_indefint": {
+        "prefix": "inp_valid_indefint",
+        "body": "inp_valid_indefint",
+        "description": "inp_valid_indefint...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_ip_4_and_6_csv": {
+        "prefix": "inp_valid_ip_4_and_6_csv",
+        "body": "inp_valid_ip_4_and_6_csv",
+        "description": "inp_valid_ip_4_and_6_csv...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_noyes": {
+        "prefix": "inp_valid_noyes",
+        "body": "inp_valid_noyes",
+        "description": "inp_valid_noyes...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_string": {
+        "prefix": "inp_valid_string",
+        "body": "inp_valid_string",
+        "description": "inp_valid_string...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_string_esc": {
+        "prefix": "inp_valid_string_esc",
+        "body": "inp_valid_string_esc",
+        "description": "inp_valid_string_esc...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_string_safe": {
+        "prefix": "inp_valid_string_safe",
+        "body": "inp_valid_string_safe",
+        "description": "inp_valid_string_safe...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_tcpprof": {
+        "prefix": "inp_valid_tcpprof",
+        "body": "inp_valid_tcpprof",
+        "description": "inp_valid_tcpprof...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_truefalse": {
+        "prefix": "inp_valid_truefalse",
+        "body": "inp_valid_truefalse",
+        "description": "inp_valid_truefalse...",
+        "scope": "source.iapp"
+    },
+    "inp_valid_yesno": {
+        "prefix": "inp_valid_yesno",
+        "body": "inp_valid_yesno",
+        "description": "inp_valid_yesno...",
+        "scope": "source.iapp"
+    },
+    "ip_max_mask": {
+        "prefix": "ip_max_mask",
+        "body": "ip_max_mask",
+        "description": "ip_max_mask...",
+        "scope": "source.iapp"
+    },
+    "ip_port": {
+        "prefix": "ip_port",
+        "body": "ip_port",
+        "description": "ip_port...",
+        "scope": "source.iapp"
+    },
+    "ip_v": {
+        "prefix": "ip_v",
+        "body": "ip_v",
+        "description": "ip_v...",
+        "scope": "source.iapp"
+    },
+    "ipv4_to_ipv6": {
+        "prefix": "ipv4_to_ipv6",
+        "body": "ipv4_to_ipv6",
+        "description": "ipv4_to_ipv6...",
+        "scope": "source.iapp"
+    },
+    "ipv6_to_ipv4": {
+        "prefix": "ipv6_to_ipv4",
+        "body": "ipv6_to_ipv4",
+        "description": "ipv6_to_ipv4...",
+        "scope": "source.iapp"
+    },
+    "is_field_default": {
+        "prefix": "is_field_default",
+        "body": "is_field_default",
+        "description": "is_field_default...",
+        "scope": "source.iapp"
+    },
+    "is_iapp_strict": {
+        "prefix": "is_iapp_strict",
+        "body": "is_iapp_strict",
+        "description": "is_iapp_strict...",
+        "scope": "source.iapp"
+    },
+    "item_disable_empty": {
+        "prefix": "item_disable_empty",
+        "body": "item_disable_empty",
+        "description": "item_disable_empty...",
+        "scope": "source.iapp"
+    },
+    "json_decode_bool": {
+        "prefix": "json_decode_bool",
+        "body": "json_decode_bool",
+        "description": "json_decode_bool...",
+        "scope": "source.iapp"
+    },
+    "json_decode_num": {
+        "prefix": "json_decode_num",
+        "body": "json_decode_num",
+        "description": "json_decode_num...",
+        "scope": "source.iapp"
+    },
+    "json_decode_str": {
+        "prefix": "json_decode_str",
+        "body": "json_decode_str",
+        "description": "json_decode_str...",
+        "scope": "source.iapp"
+    },
+    "json_encode_array": {
+        "prefix": "json_encode_array",
+        "body": "json_encode_array",
+        "description": "json_encode_array...",
+        "scope": "source.iapp"
+    },
+    "json_encode_array_auto": {
+        "prefix": "json_encode_array_auto",
+        "body": "json_encode_array_auto",
+        "description": "json_encode_array_auto...",
+        "scope": "source.iapp"
+    },
+    "json_encode_auto": {
+        "prefix": "json_encode_auto",
+        "body": "json_encode_auto",
+        "description": "json_encode_auto...",
+        "scope": "source.iapp"
+    },
+    "json_encode_b64": {
+        "prefix": "json_encode_b64",
+        "body": "json_encode_b64",
+        "description": "json_encode_b64...",
+        "scope": "source.iapp"
+    },
+    "json_encode_bool": {
+        "prefix": "json_encode_bool",
+        "body": "json_encode_bool",
+        "description": "json_encode_bool...",
+        "scope": "source.iapp"
+    },
+    "json_encode_hex": {
+        "prefix": "json_encode_hex",
+        "body": "json_encode_hex",
+        "description": "json_encode_hex...",
+        "scope": "source.iapp"
+    },
+    "json_encode_list": {
+        "prefix": "json_encode_list",
+        "body": "json_encode_list",
+        "description": "json_encode_list...",
+        "scope": "source.iapp"
+    },
+    "json_encode_listnum": {
+        "prefix": "json_encode_listnum",
+        "body": "json_encode_listnum",
+        "description": "json_encode_listnum...",
+        "scope": "source.iapp"
+    },
+    "json_encode_listraw": {
+        "prefix": "json_encode_listraw",
+        "body": "json_encode_listraw",
+        "description": "json_encode_listraw...",
+        "scope": "source.iapp"
+    },
+    "json_encode_listschema": {
+        "prefix": "json_encode_listschema",
+        "body": "json_encode_listschema",
+        "description": "json_encode_listschema...",
+        "scope": "source.iapp"
+    },
+    "json_encode_num": {
+        "prefix": "json_encode_num",
+        "body": "json_encode_num",
+        "description": "json_encode_num...",
+        "scope": "source.iapp"
+    },
+    "json_encode_schema": {
+        "prefix": "json_encode_schema",
+        "body": "json_encode_schema",
+        "description": "json_encode_schema...",
+        "scope": "source.iapp"
+    },
+    "json_encode_str": {
+        "prefix": "json_encode_str",
+        "body": "json_encode_str",
+        "description": "json_encode_str...",
+        "scope": "source.iapp"
+    },
+    "lputs": {
+        "prefix": "lputs",
+        "body": "lputs ${1|DEBUG,INFO,WARN,ERROR|}",
+        "description": "lputs...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy": {
+        "prefix": "ltm_policy",
+        "body": "ltm_policy",
+        "description": "ltm_policy...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_all_l7ddos": {
+        "prefix": "ltm_policy_all_l7ddos",
+        "body": "ltm_policy_all_l7ddos",
+        "description": "ltm_policy_all_l7ddos...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_any_is_l7ddos": {
+        "prefix": "ltm_policy_any_is_l7ddos",
+        "body": "ltm_policy_any_is_l7ddos",
+        "description": "ltm_policy_any_is_l7ddos...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_any_is_waf": {
+        "prefix": "ltm_policy_any_is_waf",
+        "body": "ltm_policy_any_is_waf",
+        "description": "ltm_policy_any_is_waf...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_controls": {
+        "prefix": "ltm_policy_controls",
+        "body": "ltm_policy_controls",
+        "description": "ltm_policy_controls...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_requires": {
+        "prefix": "ltm_policy_requires",
+        "body": "ltm_policy_requires",
+        "description": "ltm_policy_requires...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_row_is_l7ddos": {
+        "prefix": "ltm_policy_row_is_l7ddos",
+        "body": "ltm_policy_row_is_l7ddos",
+        "description": "ltm_policy_row_is_l7ddos...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_row_is_waf": {
+        "prefix": "ltm_policy_row_is_waf",
+        "body": "ltm_policy_row_is_waf",
+        "description": "ltm_policy_row_is_waf...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_rule_actions": {
+        "prefix": "ltm_policy_rule_actions",
+        "body": "ltm_policy_rule_actions",
+        "description": "ltm_policy_rule_actions...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_rule_conditions": {
+        "prefix": "ltm_policy_rule_conditions",
+        "body": "ltm_policy_rule_conditions",
+        "description": "ltm_policy_rule_conditions...",
+        "scope": "source.iapp"
+    },
+    "ltm_policy_rules": {
+        "prefix": "ltm_policy_rules",
+        "body": "ltm_policy_rules",
+        "description": "ltm_policy_rules...",
+        "scope": "source.iapp"
+    },
+    "none_or_and_separated_list": {
+        "prefix": "none_or_and_separated_list",
+        "body": "none_or_and_separated_list",
+        "description": "none_or_and_separated_list...",
+        "scope": "source.iapp"
+    },
+    "none_or_list": {
+        "prefix": "none_or_list",
+        "body": "none_or_list",
+        "description": "none_or_list...",
+        "scope": "source.iapp"
+    },
+    "none_or_replace_all_with_list": {
+        "prefix": "none_or_replace_all_with_list",
+        "body": "none_or_replace_all_with_list",
+        "description": "none_or_replace_all_with_list...",
+        "scope": "source.iapp"
+    },
+    "noneable_list": {
+        "prefix": "noneable_list",
+        "body": "noneable_list",
+        "description": "noneable_list...",
+        "scope": "source.iapp"
+    },
+    "noneable_quoted_string": {
+        "prefix": "noneable_quoted_string",
+        "body": "noneable_quoted_string",
+        "description": "noneable_quoted_string...",
+        "scope": "source.iapp"
+    },
+    "noneable_string": {
+        "prefix": "noneable_string",
+        "body": "noneable_string",
+        "description": "noneable_string...",
+        "scope": "source.iapp"
+    },
+    "now_ms": {
+        "prefix": "now_ms",
+        "body": "now_ms",
+        "description": "now_ms...",
+        "scope": "source.iapp"
+    },
+    "objname": {
+        "prefix": "objname",
+        "body": "objname",
+        "description": "objname...",
+        "scope": "source.iapp"
+    },
+    "print_boxed": {
+        "prefix": "print_boxed",
+        "body": "print_boxed",
+        "description": "print_boxed...",
+        "scope": "source.iapp"
+    },
+    "processing_msg": {
+        "prefix": "processing_msg",
+        "body": "processing_msg",
+        "description": "processing_msg...",
+        "scope": "source.iapp"
+    },
+    "quarantine_mode": {
+        "prefix": "quarantine_mode",
+        "body": "quarantine_mode",
+        "description": "quarantine_mode...",
+        "scope": "source.iapp"
+    },
+    "read_kvps": {
+        "prefix": "read_kvps",
+        "body": "read_kvps",
+        "description": "read_kvps...",
+        "scope": "source.iapp"
+    },
+    "route_advertisement_mode": {
+        "prefix": "route_advertisement_mode",
+        "body": "route_advertisement_mode",
+        "description": "route_advertisement_mode...",
+        "scope": "source.iapp"
+    },
+    "route_advertisement_mode_11_6": {
+        "prefix": "route_advertisement_mode_11_6",
+        "body": "route_advertisement_mode_11_6",
+        "description": "route_advertisement_mode_11_6...",
+        "scope": "source.iapp"
+    },
+    "route_advertisement_mode_13_1": {
+        "prefix": "route_advertisement_mode_13_1",
+        "body": "route_advertisement_mode_13_1",
+        "description": "route_advertisement_mode_13_1...",
+        "scope": "source.iapp"
+    },
+    "rule_format": {
+        "prefix": "rule_format",
+        "body": "rule_format",
+        "description": "rule_format...",
+        "scope": "source.iapp"
+    },
+    "script::help": {
+        "prefix": "script::help",
+        "body": "script::help",
+        "description": "script::help...",
+        "scope": "source.iapp"
+    },
+    "script::init": {
+        "prefix": "script::init",
+        "body": "script::init",
+        "description": "script::init...",
+        "scope": "source.iapp"
+    },
+    "script::run": {
+        "prefix": "script::run",
+        "body": "script::run",
+        "description": "script::run...",
+        "scope": "source.iapp"
+    },
+    "script::tabc": {
+        "prefix": "script::tabc",
+        "body": "script::tabc",
+        "description": "script::tabc...",
+        "scope": "source.iapp"
+    },
+    "section_to_array": {
+        "prefix": "section_to_array",
+        "body": "section_to_array",
+        "description": "section_to_array...",
+        "scope": "source.iapp"
+    },
+    "start_processing": {
+        "prefix": "start_processing",
+        "body": "start_processing",
+        "description": "start_processing...",
+        "scope": "source.iapp"
+    },
+    "table_row_to_array": {
+        "prefix": "table_row_to_array",
+        "body": "table_row_to_array",
+        "description": "table_row_to_array...",
+        "scope": "source.iapp"
+    },
+    "tier_setup": {
+        "prefix": "tier_setup",
+        "body": "tier_setup",
+        "description": "tier_setup...",
+        "scope": "source.iapp"
+    },
+    "time_it": {
+        "prefix": "time_it",
+        "body": "time_it",
+        "description": "time_it...",
+        "scope": "source.iapp"
+    },
+    "timing_calibration": {
+        "prefix": "timing_calibration",
+        "body": "timing_calibration",
+        "description": "timing_calibration...",
+        "scope": "source.iapp"
+    },
+    "tmos_at_least": {
+        "prefix": "tmos_at_least",
+        "body": "tmos_at_least",
+        "description": "tmos_at_least...",
+        "scope": "source.iapp"
+    },
+    "tmos_version": {
+        "prefix": "tmos_version",
+        "body": "tmos_version",
+        "description": "tmos_version...",
+        "scope": "source.iapp"
+    },
+    "use_ltm_rule": {
+        "prefix": "use_ltm_rule",
+        "body": "use_ltm_rule",
+        "description": "use_ltm_rule...",
+        "scope": "source.iapp"
+    },
+    "use_ltm_rules": {
+        "prefix": "use_ltm_rules",
+        "body": "use_ltm_rules",
+        "description": "use_ltm_rules...",
+        "scope": "source.iapp"
+    },
+    "use_security_log_profile": {
+        "prefix": "use_security_log_profile",
+        "body": "use_security_log_profile",
+        "description": "use_security_log_profile...",
+        "scope": "source.iapp"
+    },
+    "use_security_profile_l7dos": {
+        "prefix": "use_security_profile_l7dos",
+        "body": "use_security_profile_l7dos",
+        "description": "use_security_profile_l7dos...",
+        "scope": "source.iapp"
+    },
+    "use_security_profile_websecurity": {
+        "prefix": "use_security_profile_websecurity",
+        "body": "use_security_profile_websecurity",
+        "description": "use_security_profile_websecurity...",
+        "scope": "source.iapp"
+    },
+    "virtual_mode": {
+        "prefix": "virtual_mode",
+        "body": "virtual_mode",
+        "description": "virtual_mode...",
+        "scope": "source.iapp"
+    },
+    "vlans_enabled": {
+        "prefix": "vlans_enabled",
+        "body": "vlans_enabled",
+        "description": "vlans_enabled...",
+        "scope": "source.iapp"
+    },
+    "write_kvps": {
+        "prefix": "write_kvps",
+        "body": "write_kvps",
+        "description": "write_kvps...",
+        "scope": "source.iapp"
+    }
+}
