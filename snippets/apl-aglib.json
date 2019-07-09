@@ -1,0 +1,44 @@
+{
+    "enadis": {
+        "prefix": "enadis",
+        "body": "enadis ${1:NAME}\n",
+        "description": "enadis...",
+        "scope": "source.apl"
+    },
+    "enadisdry": {
+        "prefix": "enadisdry",
+        "body": "enadisdry ${1:NAME}\n",
+        "description": "enadisdry...",
+        "scope": "source.apl"
+    },
+    "disena": {
+        "prefix": "disena",
+        "body": "disena ${1:NAME}\n",
+        "description": "disena...",
+        "scope": "source.apl"
+    },
+    "truefalse": {
+        "prefix": "truefalse",
+        "body": "truefalse ${1:NAME}\n",
+        "description": "truefalse...",
+        "scope": "source.apl"
+    },
+    "falsetrue": {
+        "prefix": "falsetrue",
+        "body": "falsetrue ${1:NAME}\n",
+        "description": "falsetrue...",
+        "scope": "source.apl"
+    },
+    "indefint": {
+        "prefix": "indefint",
+        "body": "indefint ${1:NAME}\n",
+        "description": "indefint...",
+        "scope": "source.apl"
+    },
+    "tcpprof": {
+        "prefix": "tcpprof",
+        "body": "tcpprof ${1:NAME}\n",
+        "description": "tcpprof...",
+        "scope": "source.apl"
+    }
+}

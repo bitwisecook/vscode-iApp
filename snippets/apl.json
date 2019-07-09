@@ -1,14 +1,80 @@
 {
+    "define": {
+        "prefix": "define",
+        "body": "define",
+        "description": "define...",
+        "scope": "source.apl"
+    },
+    "include": {
+        "prefix": "include",
+        "body": "include \"$0\"",
+        "description": "include...",
+        "scope": "source.apl"
+    },
+    "optional": {
+        "prefix": "optional",
+        "body": "optional ( ${1:EXPRESSION} ) {\n\t\n}\n",
+        "description": "optional...",
+        "scope": "source.apl"
+    },
+    "message": {
+        "prefix": "message",
+        "body": "message \"$0\"",
+        "description": "message...",
+        "scope": "source.apl"
+    },
     "section": {
         "prefix": "section",
-        "body": "section ${1:NAME} {\n\t$0",
+        "body": "section ${1:NAME} {\n\t$0\n}\n",
         "description": "section...",
-        "scope": "source.iapp"
+        "scope": "source.apl"
+    },
+    "text": {
+        "prefix": "text",
+        "body": "text ${1|\"en-US\" ,\"de-DE\" ,\"fr-FR\" ,\"ja-JP\" |}{\n\t$0\n}\n",
+        "description": "text...",
+        "scope": "source.apl"
     },
     "table": {
         "prefix": "table",
-        "body": "table ${1:NAME} {\n\t$0",
+        "body": "table ${1:NAME} {\n\t$0\n}\n",
         "description": "table...",
-        "scope": "source.iapp"
+        "scope": "source.apl"
+    },
+    "row": {
+        "prefix": "row",
+        "body": "row ${1:NAME} {\n\t$0\n}\n",
+        "description": "row...",
+        "scope": "source.apl"
+    },
+    "string": {
+        "prefix": "string",
+        "body": "string ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} ${6:required} ${7:validator \"${8|Number,NonNegativeNumber,IpAddress,PortNumber,IpOrFqdn,FQDN|}\"}\n$0",
+        "description": "string...",
+        "scope": "source.apl"
+    },
+    "password": {
+        "prefix": "password",
+        "body": "password ${1:NAME} ${2:display \"${3|small,medium,large,xlarge,xxlarge|}\"} ${4:required}\n$0",
+        "description": "password...",
+        "scope": "source.apl"
+    },
+    "choice": {
+        "prefix": "choice",
+        "body": "choice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { ${6:CHOICES} }\n$0",
+        "description": "choice...",
+        "scope": "source.apl"
+    },
+    "editchoice": {
+        "prefix": "editchoice",
+        "body": "editchoice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { ${6:CHOICES} }\n$0",
+        "description": "editchoice...",
+        "scope": "source.apl"
+    },
+    "multichoice": {
+        "prefix": "multichoice",
+        "body": "multichoice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { ${6:CHOICES} }\n$0",
+        "description": "multichoice...",
+        "scope": "source.apl"
     }
 }

@@ -1,6 +1,6 @@
 BASENAME?=iapp
 NAME?=f5-$(BASENAME)
-VERSION?=1.0.2
+VERSION?=$(shell jq -r .version package.json)
 VSIX?=$(BASENAME)-$(VERSION).vsix
 PKG_ID?=bitwisecook.$(BASENAME)
 
