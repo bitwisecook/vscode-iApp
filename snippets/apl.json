@@ -61,19 +61,19 @@
     },
     "choice": {
         "prefix": "choice",
-        "body": "choice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { ${6:CHOICES} }\n$0",
+        "body": "choice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { \"${6:DISPLAY NAME1}\" => \"${7:VALUE1}\", ${8:DISPLAY NAME2}\" => \"${7:VALUE2}\"} }\n$0",
         "description": "choice...",
         "scope": "source.apl"
     },
     "editchoice": {
         "prefix": "editchoice",
-        "body": "editchoice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { ${6:CHOICES} }\n$0",
+        "body": "editchoice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { \"${6:DISPLAY NAME1}\" => \"${7:VALUE1}\", ${8:DISPLAY NAME2}\" => \"${7:VALUE2}\"} }\n$0",
         "description": "editchoice...",
         "scope": "source.apl"
     },
     "multichoice": {
         "prefix": "multichoice",
-        "body": "multichoice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { ${6:CHOICES} }\n$0",
+        "body": "multichoice ${1:NAME} ${2:default \"${3:VALUE}\"} ${4:display \"${5|small,medium,large,xlarge,xxlarge|}\"} { \"${6:DISPLAY NAME1}\" => \"${7:VALUE1}\", ${8:DISPLAY NAME2}\" => \"${7:VALUE2}\"} }\n$0",
         "description": "multichoice...",
         "scope": "source.apl"
     }
