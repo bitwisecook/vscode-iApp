@@ -21,8 +21,8 @@ function getIndentationStyle(options: vscode.FormattingOptions) {
 	return { tc, td, ts };
 }
 
-function getSelectedLines(document: vscode.TextDocument, selection: vscode.Selection): vscode.Range {
-	return new vscode.Range(document.lineAt(selection.start.line).range.start, document.lineAt(selection.end.line).range.end);
+function getSelectedLines(document: vscode.TextDocument, range: vscode.Range): vscode.Range {
+	return new vscode.Range(document.lineAt(range.start.line).range.start, document.lineAt(range.end.line).range.end);
 }
 
 function getPreviousLineContaintingText(document: vscode.TextDocument, selectedLines: vscode.Range) {
@@ -58,9 +58,11 @@ function guessPreIndentation(priorLine: vscode.TextLine, tabChar: string, tabDep
 	return tabChar.repeat(preIndent) + ' '.repeat(preIndentRemainder);
 }
 
-function formatRule(inputCode: string, preIndent: string = '', tabChar: string = ' ', tabDepth: number = 4): string {
+function formatIApp(inputCode: string, preIndent: string = '', tabChar: string = ' ', tabDepth: number = 4): string {
 	let tabLevel = 0;
 	let out: string[] = [];
+	let continuation = false;
+
 	inputCode.split('\n').forEach(element => {
 		let line = element.trim();
 		if (line === '') {
@@ -71,23 +73,59 @@ function formatRule(inputCode: string, preIndent: string = '', tabChar: string =
 			out.push(preIndent + tabChar.repeat(tabLevel) + line);
 		} else if (/\{$/.test(line) || /^\{$/.test(line)) {
 			if (/^\}/.test(line)) {
-				tabLevel = tabLevel - tabDepth;
-				if (tabLevel < 0) {
-					tabLevel = 0;
-					preIndent = preIndent.substr(tabDepth, preIndent.length - tabDepth);
-				}
+				tabLevel -= tabDepth;
 			}
 			out.push(preIndent + tabChar.repeat(tabLevel) + line);
 			tabLevel += tabDepth;
 		} else if (/^\}$/.test(line)) {
-			tabLevel = tabLevel - tabDepth;
+			tabLevel -= tabDepth;
 			if (tabLevel < 0) {
 				tabLevel = 0;
 				preIndent = preIndent.substr(tabDepth, preIndent.length - tabDepth);
 			}
 			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+		} else if (!continuation && /\\$/.test(line)) {
+			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+			tabLevel += tabDepth;
+			continuation = true;
+		} else if (continuation && /\{\s+\\$/.test(line)) {
+			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+			tabLevel += tabDepth;
+		} else if (continuation && /\[[^\t {\[["()\]}]+\s+\\$/.test(line)) {
+			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+			tabLevel += tabDepth;
+		} else if (continuation && /^\\?[\]})]\s*\\$/.test(line)) {
+			tabLevel -= tabDepth;
+			if (tabLevel < 0) {
+				tabLevel = 0;
+				preIndent = preIndent.substr(tabDepth, preIndent.length - tabDepth);
+			}
+			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+		} else if (continuation && (/^\\?[\]})"]$/.test(line))) {
+			tabLevel -= tabDepth;
+			if (tabLevel < 0) {
+				tabLevel = 0;
+				preIndent = preIndent.substr(tabDepth, preIndent.length - tabDepth);
+			}
+			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+			tabLevel -= tabDepth;
+			continuation = false;
+		} else if (continuation && (/\\?[\]})"]$/.test(line))) {
+			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+			tabLevel -= tabDepth;
+			continuation = false;
+		} else if (continuation && /\\$/.test(line)) {
+			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+		} else if (continuation && !(/\\$/.test(line))) {
+			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+			tabLevel -= tabDepth;
+			continuation = false;
 		} else {
 			out.push(preIndent + tabChar.repeat(tabLevel) + line);
+		}
+		if (tabLevel < 0) {
+			tabLevel = 0;
+			preIndent = preIndent.substr(tabDepth, preIndent.length - tabDepth);
 		}
 	});
 	return out.join('\n');
@@ -104,21 +142,29 @@ export function activate(context: vscode.ExtensionContext) {
 			if (!editor) {
 				return []; // No open text editor
 			}
+			return [vscode.TextEdit.replace(fullDocumentRange(document), formatIApp(document.getText(), '', tc, td))];
+		}
+	});
 
-			const selection = editor.selection;
-			if (selection.isEmpty) {
-				return [vscode.TextEdit.replace(fullDocumentRange(document), formatRule(document.getText(), '', tc, td))];
+	vscode.languages.registerDocumentRangeFormattingEditProvider('iapp-lang', {
+		provideDocumentRangeFormattingEdits(document: vscode.TextDocument, range: vscode.Range, options: vscode.FormattingOptions): vscode.TextEdit[] {
+			const { tc, td, ts }: { tc: string; td: number, ts: number } = getIndentationStyle(options);
+
+			const editor = vscode.window.activeTextEditor;
+			if (!editor) {
+				return []; // No open text editor
 			}
 
 			let preIndent = '';
-			let priorLine = getPreviousLineContaintingText(document, selection);
+			let priorLine = getPreviousLineContaintingText(document, range);
 			if (priorLine !== undefined) {
 				preIndent = guessPreIndentation(priorLine, tc, td, ts);
 			}
-			let selectedLines = getSelectedLines(document, selection);
-			return [vscode.TextEdit.replace(selectedLines, formatRule(document.getText(selectedLines), preIndent, tc, td))];
+			let selectedLines = getSelectedLines(document, range);
+			return [vscode.TextEdit.replace(selectedLines, formatIApp(document.getText(selectedLines), preIndent, tc, td))];
 		}
 	});
+
 
 	const iAppcompletionProvider = vscode.languages.registerCompletionItemProvider(
 		'iapp-lang',
