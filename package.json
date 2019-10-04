@@ -3,14 +3,20 @@
 	"displayName": "F5 Networks iApp",
 	"description": "F5 Networks iApp Extension",
 	"publisher": "bitwisecook",
-	"version": "1.0.6",
+	"version": "1.0.7",
+	"keywords": [
+		"f5",
+		"f5networks",
+		"iapp",
+		"iapps"
+	],
 	"engines": {
 		"vscode": "^1.35.0"
 	},
 	"icon": "images/f5.png",
 	"galleryBanner": {
-		"color": "#DF0832",
-		"theme": "dark"
+		"color": "#DCDCDC",
+		"theme": "light"
 	},
 	"homepage": "https://github.com/bitwisecook/vscode-iApp/blob/master/README.md",
 	"repository": {
