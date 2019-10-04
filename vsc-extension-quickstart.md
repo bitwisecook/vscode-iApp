@@ -8,7 +8,7 @@
 * `src/extension.ts` - this is the main file where you will provide the implementation of your command.
   * The file exports one function, `activate`, which is called the very first time your extension is activated (in this case by executing the command). Inside the `activate` function we call `registerCommand`.
   * We pass the function containing the implementation of the command as the second parameter to `registerCommand`.
-* `syntaxes/irule.tmLanguage` - this is the Text mate grammar file that is used for tokenization.
+* `syntaxes/iapp.tmLanguage` - this is the Text mate grammar file that is used for tokenization.
 * `language-configuration.json` - this is the language configuration, defining the tokens that are used for comments and brackets.
 * `snippets/snippets.json` - the file containing all snippets.
 
