@@ -31,5 +31,7 @@ $(VSIX): build
 
 vsix: $(VSIX)
 
-syntax: syntaxes/iapp.YAML-tmLanguage syntaxes/apl.YAML.tmLanguage out/build.js
-	node out/build.js
+out/syntaxes/%.tmLanguage: syntaxes/%.YAML-tmLanguage src/build.js
+	node src/build.js
+
+syntax: out/syntaxes/iapp.tmLanguage out/syntaxes/apl.tmLanguage

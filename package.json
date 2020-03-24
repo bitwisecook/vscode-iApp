@@ -3,7 +3,7 @@
     "displayName": "F5 Networks iApp",
     "description": "F5 Networks iApp Extension",
     "publisher": "bitwisecook",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "keywords": [
         "f5",
         "f5networks",
@@ -11,7 +11,7 @@
         "iapps"
     ],
     "engines": {
-        "vscode": "^1.35.0"
+        "vscode": "^1.43.1"
     },
     "icon": "images/f5.png",
     "galleryBanner": {
@@ -104,7 +104,7 @@
     "devDependencies": {
         "@types/mocha": "^2.2.42",
         "@types/node": "^10.12.21",
-        "converter": "0.0.5",
+        "plist": "^3.0.1",
         "tslint": "^5.12.1",
         "typescript": "^3.3.1",
         "vscode": "^1.1.28"
