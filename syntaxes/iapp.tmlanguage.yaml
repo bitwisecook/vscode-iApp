@@ -1856,7 +1856,7 @@ repository:
     patterns:
       -
         name: constant.character.escape.newline.iapp
-        match: "\\\\\\n"
+        match: '\\\n'
       -
         name: constant.character.escape
         match: '\s*+\\[\]"\\nrtbfv0`\[]'
@@ -1881,32 +1881,32 @@ repository:
       -
         include: '#string-escapes'
       -
-        match: "\\s*(\\$)(?=$|\\n|\\]|}|\"|;|\\s)"
-        name: bare.string.iapp
+        match: '\s*(\$)(?=$|\n|\]|}|\"|;|\s)'
+        name: string.bare.quoted.iapp
       -
         match: '(\\[^\]"\\nrtbfv0`\[])'
-        name: bare.string.iapp
+        name: string.bare.quoted.iapp
       -
         match: "(?<!::)(?!;|\\]|}|\\*|\"|;)([^\\*}\\\\;\\]{\\[\"\\$\\n\\-\\)\\(]+)"
         captures:
           '1':
-            name: bare.string.iapp
+            name: string.bare.quoted.iapp
             patterns:
               -
                 match: '(?:(?<=::)|(?=[^\s:]*(?=::)))(?!\s)([^\s]*)'
                 captures:
-                  '1':
+                  '1': 
                     patterns:
-                      -
-                        include: '#namespace-name'
+                      - 
+                        include: "#namespace-name"
               -
                 include: '#variable'
       -
         match: '(-)(?=\s|;|}|\]|"|-)'
-        name: bare.string.iapp
+        name: string.bare.quoted.iapp
       -
         match: '(?<=-)(-)'
-        name: bare.string.iapp
+        name: string.quoted.iapp
       -
         include: '#variable'
   html-curly-brackets:
