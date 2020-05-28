@@ -2,5 +2,6 @@
 
 All notable changes to the "iapp" extension will be documented in this file.
 
-## [Unreleased]
-
+## 1.1.0
+Rewrite the base syntax for implementations
+Add all the known commands and some internal ones from my own iApps

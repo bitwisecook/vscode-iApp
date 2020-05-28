@@ -8,3 +8,10 @@ vsc-extension-quickstart.md
 **/tslint.json
 **/*.map
 **/*.ts
+syntaxes/**
+Makefile
+.yo-rc.json
+tsconfig.tsbuildinfo
+data/
+node_modules/yamljs/
+node_modules/js-yaml/

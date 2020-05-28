@@ -3,7 +3,7 @@
     "displayName": "F5 Networks iApp",
     "description": "F5 Networks iApp Extension",
     "publisher": "bitwisecook",
-    "version": "1.0.8",
+    "version": "1.1.0",
     "keywords": [
         "f5",
         "f5networks",
@@ -11,8 +11,12 @@
         "iapps"
     ],
     "engines": {
-        "vscode": "^1.43.1"
+        "vscode": "^1.45.0"
     },
+    "bugs": {
+        "url": "https://github.com/bitwisecook/vscode-iApp/issues"
+    },
+    "license": "https://github.com/bitwisecook/vscode-iApp/blob/master/LICENSE",
     "icon": "images/f5.png",
     "galleryBanner": {
         "color": "#DCDCDC",
@@ -47,6 +51,7 @@
                     "implementation",
                     "macro",
                     ".iapp",
+                    ".macro",
                     ".tcl"
                 ],
                 "configuration": "./language-configuration.json"
@@ -67,12 +72,12 @@
             {
                 "language": "iapp-lang",
                 "scopeName": "source.iapp",
-                "path": "./out/syntaxes/iapp.tmLanguage"
+                "path": "./out/syntaxes/iapp.json"
             },
             {
                 "language": "apl-lang",
                 "scopeName": "source.apl",
-                "path": "./out/syntaxes/apl.tmLanguage"
+                "path": "./out/syntaxes/apl.json"
             }
         ],
         "snippets": [
@@ -96,17 +101,27 @@
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./ && node out/build.js",
+        "compile": "tsc -p ./ && npx js-yaml syntaxes/iapp.tmlanguage.yaml > out/syntaxes/iapp.json && npx js-yaml syntaxes/apl.tmlanguage.yaml > out/syntaxes/apl.json",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "lint": "eslint src --ext ts",
+        "pretest": "npm run compile && npm run lint",
+        "test": "node ./out/test/runTest.js"
     },
     "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^10.12.21",
-        "plist": "^3.0.1",
-        "tslint": "^5.12.1",
-        "typescript": "^3.3.1",
-        "vscode": "^1.1.28"
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.11.0",
+        "@types/vscode": "^1.45.0",
+        "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "eslint": "^6.8.0",
+        "glob": "^7.1.6",
+        "mocha": "^7.1.2",
+        "typescript": "^3.8.3",
+        "vscode-test": "^1.3.0"
+    },
+    "dependencies": {
+        "js-yaml": "^3.14.0",
+        "yamljs": "^0.3.0"
     }
 }
