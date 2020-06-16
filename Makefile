@@ -4,11 +4,13 @@ VERSION?=$(shell jq -r .version package.json)
 VSIX?=$(BASENAME)-$(VERSION).vsix
 PKG_ID?=bitwisecook.$(BASENAME)
 
+.DEFAULT_GOAL := vsix
+
 node_modules/:
 	npm install
 
 out/%.js: src/%.ts node_modules/ out/syntaxes
-	npm run compile
+	npm run webpack
 
 clean:
 	rm -rf out $(VSIX)
