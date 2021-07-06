@@ -126,8 +126,10 @@
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.11"
     },
+    "resolutions": {
+        "glob-parent": "^5.1.2"
+    },
     "dependencies": {
-        "js-yaml": "^3.14.0",
-        "yamljs": "^0.3.0"
+        "js-yaml": "^3.14.0"
     }
 }
