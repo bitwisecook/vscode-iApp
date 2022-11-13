@@ -3,6 +3,9 @@
 All notable changes to the "iapp" extension will be documented in this file.
 
 ## 1.1.1
+Fix regexp/regsub handling
+
+## 1.1.1
 Make strings look more like strings
 
 ## 1.1.0

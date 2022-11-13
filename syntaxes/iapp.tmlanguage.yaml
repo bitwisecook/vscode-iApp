@@ -298,7 +298,7 @@ repository:
         include: regexp
       -
         begin: '(?<=^|\[|{|;)\s*(::)?\b(format|scan)\b'
-        end: "(?=(?<!\\\\)(?:$|[\\n\\]};]))"
+        end: "(?=(?<!\\\\)(?:$|.*[\n;}\\]]))"
         captures:
           '1':
             name: support.type
