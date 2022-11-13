@@ -2,7 +2,7 @@
 
 All notable changes to the "iapp" extension will be documented in this file.
 
-## 1.1.1
+## 1.1.5
 Fix regexp/regsub handling
 
 ## 1.1.1
