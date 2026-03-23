@@ -29,7 +29,7 @@ uninstall:
 package: $(VSIX)
 
 $(VSIX): build
-	npx vsce package
+	npx @vscode/vsce package
 
 vsix: $(VSIX)
 

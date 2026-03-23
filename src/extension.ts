@@ -134,6 +134,15 @@ function formatIApp(inputCode: string, preIndent: string = '', tabChar: string =
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+	vscode.window.showWarningMessage(
+		"The iApp extension is deprecated and no longer maintained. Please switch to the tcl-lsp extension for continued support.",
+		"Install tcl-lsp"
+	).then(selection => {
+		if (selection === "Install tcl-lsp") {
+			vscode.env.openExternal(vscode.Uri.parse("vscode:extension/bitwisecook.tcl-lsp"));
+		}
+	});
+
 	vscode.languages.registerDocumentFormattingEditProvider('iapp-lang', {
 		provideDocumentFormattingEdits(document: vscode.TextDocument, options: vscode.FormattingOptions): vscode.TextEdit[] {
 			const { tc, td, ts }: { tc: string; td: number, ts: number } = getIndentationStyle(options);

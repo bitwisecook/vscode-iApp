@@ -2,6 +2,11 @@
 
 All notable changes to the "iapp" extension will be documented in this file.
 
+## 1.2.0
+Deprecate extension in favour of [tcl-lsp](https://marketplace.visualstudio.com/items?itemName=bitwisecook.tcl-lsp)
+Add deprecation warning on activation
+Update all dependencies to resolve security vulnerabilities
+
 ## 1.1.5
 Fix regexp/regsub handling
 
