@@ -19,3 +19,4 @@ tsconfig.json
 tsconfig.tsbuildinfo
 webpack.config.js
 .eslintrc.js
+.claude

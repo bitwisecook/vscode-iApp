@@ -1,9 +1,9 @@
 {
     "name": "iapp",
-    "displayName": "F5 Networks iApp",
+    "displayName": "[DEPRECATED] F5 Networks iApp",
     "description": "[DEPRECATED - Use tcl-lsp instead] F5 Networks iApp Extension",
     "publisher": "bitwisecook",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "keywords": [
         "f5",
         "f5networks",
